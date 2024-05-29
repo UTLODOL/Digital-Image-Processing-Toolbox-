@@ -1,0 +1,53 @@
+<html>  
+<head>
+    <style>     
+        html{     
+        background-color: white;     
+        padding: 5px;     
+        width: 95%;     
+        }     
+        pre {     
+        overflow-x: auto;     
+        white-space: pre-wrap;     
+        white-space: -moz-pre-wrap;     
+        white-space: -pre-wrap;     
+        white-space: -o-pre-wrap;     
+        word-wrap: break-word;     
+        }     
+    </style>     
+    
+    <script type="text/javascript">     
+            
+            function setup(htmlComponent) {     
+            
+				htmlComponent.addEventListener("DataChanged", function(event) {     
+				scrollID =  htmlComponent.Data;     
+					if (scrollID != ''){
+						if(scrollID==="bottom"){         
+							scrollToBottom();     
+						} else if(scrollID==="DOWNLOAD_MCRINSTALLER" || scrollID==="BUILD_MISSING" || scrollID==="SAMPLE_GEN" || scrollID==="USER_REQUESTED_PACKAGE"){     
+							document.getElementById(scrollID).scrollIntoView(true);     
+						} else {     
+							//document.body.innerHTML = document.body.innerHTML + scrollID;     
+							document.body.appendChild(scrollID);                 
+							scrollToBottom();     
+						}    
+						htmlComponent.Data = '';
+					}		
+				});          
+            }     
+            function scrollToBottom(){     
+            var scrollingElement = (document.scrollingElement || document.body);     
+            scrollingElement.scrollTop = scrollingElement.scrollHeight;     
+            }     
+            
+    </script> 
+</head>
+ <body><meta charset="UTF-8">        
+ <pre><font color=blue>mcc -W 'webapp:app2,CONFIG:/private/var/folders/_m/8j48wqk124zc8f35r6jlv9mw0000gn/T/tp31131f4f_3ee6_4d76_8f44_960e01c67640.xml' -d '/Users/forgeahead/Desktop/作业/数字图像处理/作业/group assignment/Project/app2' -v -Z autodetect -C '/Users/forgeahead/Desktop/作业/数字图像处理/作业/group assignment/Project/app2.mlapp'</font>
+Compiler version: 8.4 (R2022a)
+Analyzing file dependencies. 
+Parsing file "/Users/forgeahead/Desktop/作业/数字图像处理/作业/group assignment/Project/app2.mlapp"
+	(referenced from command line).
+
+</pre></body></html>
